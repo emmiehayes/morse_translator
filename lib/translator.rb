@@ -1,3 +1,4 @@
+require 'pry'
 class Translator
 
   def initialize
@@ -38,5 +39,12 @@ class Translator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def eng_to_morse(text)
+    english = text.chars
+    english.map do |letter|
+      @dictionary[letter]
+    end.join
   end
 end
