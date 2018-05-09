@@ -49,18 +49,20 @@ class Translator
   end
 
   def from_file(path)
-    content = File.read(path)
-    english = content.chomp.chars
-    english.map do |letter|
+    content = File.read(path).chomp.chars
+    content.map do |letter|
       @dictionary[letter]
     end.join
   end
 
-  def morse_to_eng(code)
+  def invert_dictionary
     @dictionary.invert
-    morse = code.chars
+  end
+
+  def morse_to_eng(code)
+    morse = code.split(' ')
     morse.map do |character|
-      @dictionary[character]
-    end.join
+    invert_dictionary[character]
+  end.join
   end
 end

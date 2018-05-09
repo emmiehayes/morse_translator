@@ -43,7 +43,6 @@ class TranslatorTest < Minitest::Test
   end
 
   def test_it_can_translate_in_reverse
-    skip
     translator = Translator.new
     result = "hello world"
     assert_equal result, translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
