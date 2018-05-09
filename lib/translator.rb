@@ -42,8 +42,15 @@ class Translator
   end
 
   def eng_to_morse(text)
-
     english = text.downcase.chars
+    english.map do |letter|
+      @dictionary[letter]
+    end.join
+  end
+
+  def from_file(path)
+    content = File.read(path)
+    english = content.chomp.chars
     english.map do |letter|
       @dictionary[letter]
     end.join
