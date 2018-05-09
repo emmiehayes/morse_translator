@@ -55,4 +55,12 @@ class Translator
       @dictionary[letter]
     end.join
   end
+
+  def morse_to_eng(code)
+    @dictionary.invert
+    morse = code.chars
+    morse.map do |character|
+      @dictionary[character]
+    end.join
+  end
 end

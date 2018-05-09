@@ -36,9 +36,16 @@ class TranslatorTest < Minitest::Test
     assert_equal result, translator.eng_to_morse("There are 3 ships")
   end
 
-  def test_it_can_read_text_from_a_file
+  def test_it_can_read_text_from_a_file_and_translate
     translator = Translator.new
     result = "-.-..-- ..-..-.----- ..-....-..."
     assert_equal result, translator.from_file("input.txt")
+  end
+
+  def test_it_can_translate_in_reverse
+    skip
+    translator = Translator.new
+    result = "hello world"
+    assert_equal result, translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
   end
 end
