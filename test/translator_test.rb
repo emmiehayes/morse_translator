@@ -31,7 +31,6 @@ class TranslatorTest < Minitest::Test
   end
 
   def test_it_can_translate_a_number
-    skip
     translator = Translator.new
     result = "-......-.. .-.-.. ...-- ..........--...."
     assert_equal result, translator.eng_to_morse("There are 3 ships")

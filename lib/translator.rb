@@ -42,7 +42,8 @@ class Translator
   end
 
   def eng_to_morse(text)
-    english = text.chars
+
+    english = text.downcase.chars
     english.map do |letter|
       @dictionary[letter]
     end.join
